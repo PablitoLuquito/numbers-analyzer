@@ -18,7 +18,7 @@ function adicionarNumero() {
     numerosGuardados.push(Number(numero.value));
     let item = document.createElement('option');
     numerosGuardados.forEach(num => {
-      item.text = `Valor ${num} adcionado`;
+      item.text = `Valor ${num} adicionado`;
       mostrador.appendChild(item);
     }
     );
