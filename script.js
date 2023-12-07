@@ -1,21 +1,28 @@
 let numerosGuardados = [];
+let numero = document.getElementById('numero');
 
-function adcionarNumero() {
-  let numero = document.getElementById('numero').value;
+numero.addEventListener('keyup', function(event) {
+  if(event.key == 'Enter') {
+    return adicionarNumero();
+  }
+})
+
+function adicionarNumero() {
   let mostrador = document.getElementById('mostrador');
 
-  if (numero.length == 0 || numero <= 0 || numero > 100) {
+  if (numero.value.length == 0 || numero.value <= 0 || numero.value > 100) {
     return alert('[ERRO] Dados invalidos! Informe um número entre 1 e 100');
-  } else if (numerosGuardados.indexOf(Number(numero)) != -1) {
+  } else if (numerosGuardados.indexOf(Number(numero.value)) != -1) {
     return alert('[ERRO] Esse número já foi adcionado. Escolha outro!');
   } else {
-    numerosGuardados.push(Number(numero));
+    numerosGuardados.push(Number(numero.value));
     let item = document.createElement('option');
     numerosGuardados.forEach(num => {
       item.text = `Valor ${num} adcionado`;
       mostrador.appendChild(item);
-      }
+    }
     );
+    numero.value = '';
   }
 }
 
@@ -56,6 +63,7 @@ function finalizarAnalise() {
   }
   
   mensagem.innerHTML = '';
+  numero.focus();
   total();
   maior();
   menor();
