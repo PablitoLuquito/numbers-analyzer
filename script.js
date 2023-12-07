@@ -1,5 +1,6 @@
 let numerosGuardados = [];
 let numero = document.getElementById('numero');
+let mostrador = document.getElementById('mostrador');
 
 numero.addEventListener('keyup', function(event) {
   if(event.key == 'Enter') {
@@ -8,8 +9,9 @@ numero.addEventListener('keyup', function(event) {
 })
 
 function adicionarNumero() {
-  let mostrador = document.getElementById('mostrador');
-
+  if (mostrador.options.length >= mostrador.size) {
+    mostrador.style.overflow = 'auto';
+  }
   if (numero.value.length == 0 || numero.value <= 0 || numero.value > 100) {
     return alert('[ERRO] Dados invalidos! Informe um número entre 1 e 100');
   } else if (numerosGuardados.indexOf(Number(numero.value)) != -1) {

@@ -1,6 +1,7 @@
 body {
   background: blue;
   font: normal 15pt Arial;
+  overflow: hidden;
 }
 
 header {
@@ -15,6 +16,11 @@ section {
   width: 500px;
   margin: auto;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.363);
+  text-align: center;
+}
+
+input {
+  margin-bottom: 10px;
 }
 
 footer {
@@ -24,5 +30,30 @@ footer {
 }
 
 select {
-  width: 150px;;
+  width: 150px;
+  overflow: hidden;
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+#numero {
+  width: 200px;
+  height: 25px;
+  border-radius: 25px;
+  outline: none;
+  border: 1px solid black;
+  padding-left: 5px;
+}
+
+.btn {
+  background: white;
+  border: 1px solid black;
+  padding: 5px 10px;
+  border-radius: 25px;
+}
+
+.btn:hover {
+  background: whitesmoke;
+  cursor: pointer;
 }

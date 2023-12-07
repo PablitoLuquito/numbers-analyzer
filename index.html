@@ -10,14 +10,13 @@
   <body>
     <header><h1>Analisador de Números</h1></header>
     <section>
-      <p>Número (entre 1 e 100): 
-        <input type="number" name="numero" id="numero" autofocus>
-        <input type="button" value="Adicionar" onclick="adicionarNumero()">
-      </p>
+      <p>Número (entre 1 e 100):</p>
+      <input type="number" name="numero" id="numero" autofocus><br>
+      <input type="button" class="btn" value="Adicionar" onclick="adicionarNumero()">
       <div>
-        <select name="mostrador" id="mostrador" size="10">
-        </select>
-        <input type="button" value="Finalizar" onclick="finalizarAnalise()">
+        <select name="mostrador" id="mostrador" size="5">
+        </select><br>
+        <input type="button" class="btn" value="Finalizar" onclick="finalizarAnalise()">
       </div>
       <div id="mensagem"></div>
     </section>
